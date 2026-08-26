@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ tournament["name"] }}</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0f19;
+            color: white;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .back {
+            color: #00e5ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #273244;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .game {
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        .info {
+            color: #c5ccd8;
+            line-height: 2;
+        }
+
+        .rules {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #273244;
+        }
+
+        .register {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            text-align: center;
+            background: #00e5ff;
+            color: #061018;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/" class="back">← Back to Tournaments</a>
+
+    <div class="card">
+
+        <div class="game">
+            🎮 {{ tournament["game_name"] }}
+        </div>
+
+        <h1>{{ tournament["name"] }}</h1>
+
+        <div class="info">
+            📅 Date: {{ tournament["tournament_date"] }}<br>
+            ⏰ Time: {{ tournament["tournament_time"] }}<br>
+            💰 Entry Fee: ₹{{ tournament["entry_fee"] }}<br>
+            🏆 Prize Pool: ₹{{ tournament["prize_pool"] }}<br>
+            👥 Maximum Players: {{ tournament["max_players"] }}
+        </div>
+
+        <div class="rules">
+
+            <h3>📜 Tournament Rules</h3>
+
+            <p class="info">
+                {{ tournament["rules"] }}
+            </p>
+
+        </div>
+
+       <a href="/tournament/{{ tournament['id'] }}/register" class="register">
+        REGISTER NOW
+    </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Registered Players</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px 15px;
+            background: #0b0f19;
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .back {
+            color: #00e5ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #aeb7c6;
+            margin-bottom: 25px;
+        }
+
+        .table-box {
+            overflow-x: auto;
+            background: #111827;
+            border: 1px solid #273244;
+            border-radius: 15px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 750px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #273244;
+        }
+
+        th {
+            color: #00e5ff;
+        }
+
+        td {
+            color: #c5ccd8;
+        }
+
+        .status {
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a
+        href="/admin"
+        class="back"
+    >
+        ← Back to Dashboard
+    </a>
+
+    <h1>👥 Registered Players</h1>
+
+    <div class="subtitle">
+        {{ tournament["name"] }} —
+        {{ tournament["game_name"] }}
+    </div>
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Player Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Status</th>
+                    <th>Registered At</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for player in players %}
+
+                <tr>
+
+                    <td>
+                        {{ loop.index }}
+                    </td>
+
+                    <td>
+                        {{ player["name"] }}
+                    </td>
+
+                    <td>
+                        {{ player["email"] }}
+                    </td>
+
+                    <td>
+                        {{ player["phone"] }}
+                    </td>
+
+                    <td class="status">
+                        {{ player["registration_status"] }}
+                    </td>
+
+                    <td>
+                        {{ player["registered_at"] }}
+                    </td>
+
+                </tr>
+
+                {% else %}
+
+                <tr>
+
+                    <td colspan="6">
+                        No players registered yet.
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Tournament</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0f19;
+            color: white;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: #111827;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #273244;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #00e5ff;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            background: #0b0f19;
+            color: white;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #00e5ff;
+            color: #061018;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏆 Create Tournament</h1>
+
+    <form method="POST">
+
+        <label>Tournament Name</label>
+        <input type="text" name="name" required>
+
+        <label>Game Name</label>
+        <input type="text" name="game_name" placeholder="Example: Free Fire" required>
+
+        <label>Tournament Date</label>
+        <input type="date" name="tournament_date" required>
+
+        <label>Tournament Time</label>
+        <input type="time" name="tournament_time" required>
+
+        <label>Entry Fee</label>
+        <input type="number" name="entry_fee" min="0" required>
+
+        <label>Prize Pool</label>
+        <input type="number" name="prize_pool" min="0" required>
+
+        <label>Maximum Players</label>
+        <input type="number" name="max_players" min="1" required>
+
+        <label>Tournament Rules</label>
+        <textarea name="rules" required></textarea>
+
+        <button type="submit">
+            Publish Tournament
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
